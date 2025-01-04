@@ -2,6 +2,11 @@
 
 set -x
 
+# Load the .env file
+set -o allexport
+source .env
+set +o allexport
+
 docker exec -u www-data app-server php occ --no-warnings config:system:get trusted_domains >> trusted_domain.tmp
 
 if ! grep -q "nginx-server" trusted_domain.tmp; then
