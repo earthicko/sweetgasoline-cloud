@@ -1,3 +1,4 @@
 nextcloud
 onlyoffice
 .env
+certs/**
