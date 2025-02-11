@@ -22,3 +22,4 @@ docker exec -u www-data nextcloud-app php occ --no-warnings config:system:set on
 docker exec -u www-data nextcloud-app php occ --no-warnings config:system:set onlyoffice DocumentServerInternalUrl --value="http://nextcloud-onlyoffice/"
 docker exec -u www-data nextcloud-app php occ --no-warnings config:system:set onlyoffice StorageUrl --value="http://nextcloud-nginx/"
 docker exec -u www-data nextcloud-app php occ --no-warnings config:system:set onlyoffice jwt_secret --value=${JWT_SECRET}
+docker exec -u www-data nextcloud-app php occ --no-warnings config:system:set allow_local_remote_servers  --value=true
