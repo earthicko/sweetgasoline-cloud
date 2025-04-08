@@ -17,17 +17,19 @@ Replace sweetgasoline.kr with your Nextcloud server's domain name.
 
 Locate the Certificates: After successful certificate generation, the certificates will be located in:
 
-Private key: /etc/letsencrypt/live/sweetgasoline.kr/privkey.pem
-Fullchain: /etc/letsencrypt/live/sweetgasoline.kr/fullchain.pem
+Private key: `/etc/letsencrypt/live/sweetgasoline.kr/privkey.pem`
+Fullchain: `/etc/letsencrypt/live/sweetgasoline.kr/fullchain.pem`
 Copy Certificates: Create the certs folder in your project and copy the certificates:
 
-bash
-코드 복사
+```bash
 mkdir certs
 cp /etc/letsencrypt/live/work.sweetgasoline.kr/privkey.pem certs/
 cp /etc/letsencrypt/live/work.sweetgasoline.kr/fullchain.pem certs/
+```
+
 Setup Renewal: Let’s Encrypt certificates expire every 90 days. To renew them automatically:
 
-bash
-코드 복사
+```bash
 sudo certbot renew --dry-run
+sudo certbot renew
+```
