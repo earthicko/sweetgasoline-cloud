@@ -1,16 +1,15 @@
 services:
   app:
     container_name: nextcloud-app
-    image: nextcloud:fpm
+    image: nextcloud:32.0.3-fpm
     restart: always
     expose:
-      - '80'
       - '9000'
     volumes:
       - ./nextcloud/app_data:/var/www/html
   onlyoffice:
     container_name: nextcloud-onlyoffice
-    image: onlyoffice/documentserver:latest
+    image: onlyoffice/documentserver:9.2
     restart: always
     environment:
       - JWT_SECRET=${JWT_SECRET}
